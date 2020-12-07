@@ -5,7 +5,7 @@ function Update (){
         if ((man.type == 'radio' || man.type == 'checkbox')&& man.parentNode.nodeName != 'LABEL'){
             var baby = man.nextElementSibling;
             if(!baby || !baby.textContent)
-                baby = man.nextSibling
+                baby = man.nextSibling;
             if(baby){
                 if((baby.nodeName == '#text' || ((baby.nodeName == 'DIV' || baby.nodeName == 'SPAN') && baby.textContent))){
                     var wrapper = document.createElement("LABEL");
@@ -18,7 +18,7 @@ function Update (){
     }
 }
 Update();
-var selfImposed = false
+var selfImposed = true;
 function nodeInsertedCallback(event) {
     if(!selfImposed){
         selfImposed = true;
