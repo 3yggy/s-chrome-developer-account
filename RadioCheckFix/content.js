@@ -1,16 +1,16 @@
 function Update (){
-    var inputs = document.getElementsByTagName('input');
-    for (var i = 0; i < inputs.length; i++) {
-        input = inputs[i];
-        if ((input.type == 'radio' || input.type == 'checkbox')&& input.parentNode.nodeName != 'LABEL'){
-            var baby = input.nextElementSibling;
+    var men = document.getElementsByTagName('input');
+    for (var i = 0; i < men.length; i++) {
+        man = men[i];
+        if ((man.type == 'radio' || man.type == 'checkbox')&& man.parentNode.nodeName != 'LABEL'){
+            var baby = man.nextElementSibling;
             if(!baby || !baby.textContent)
-                baby = input.nextSibling
+                baby = man.nextSibling
             if(baby){
-                if(baby &&(baby.nodeName == '#text' || ((baby.nodeName == 'DIV' || baby.nodeName == 'SPAN') && baby.textContent))){
+                if((baby.nodeName == '#text' || ((baby.nodeName == 'DIV' || baby.nodeName == 'SPAN') && baby.textContent))){
                     var wrapper = document.createElement("LABEL");
-                    input.parentNode.insertBefore(wrapper, input);
-                    wrapper.appendChild(input);
+                    man.parentNode.insertBefore(wrapper, man);
+                    wrapper.appendChild(man);
                     wrapper.appendChild(baby);
                 }
             }
