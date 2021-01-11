@@ -1,0 +1,24 @@
+{
+    "name" : "Click in New Tab",
+    "version" : "31991",
+    "manifest_version" : 2,
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }],
+    "browser_action": {},
+    "permissions": [
+        "tabs",
+        "contextMenus"
+    ]
+}
